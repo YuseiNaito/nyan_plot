@@ -2,6 +2,7 @@
 powerd by [Siv3D](https://play-siv3d.hateblo.jp)
 
 変数xをとる関数のグラフを描画します.
+<img src="https://imgur.com/a/ZM3DZVX" alt="デフォルト" title="サンプル1">
 
 使い方
  * `Ctrl` + (`B` / `W`) ... 背景(黒/白)化
