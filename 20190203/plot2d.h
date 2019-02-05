@@ -24,7 +24,7 @@ class plot2d {
 
  private:
   // for plot
-  void plot(const ParsedExpression& f, LineString& line);
+  void plot(const ParsedExpression& f, LineString* line);
 
   GUI& gui_;
   const Color color_;

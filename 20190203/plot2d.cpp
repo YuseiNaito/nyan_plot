@@ -54,7 +54,7 @@ void plot2d::execute() {
       x_max_ = x_max;
       y_min_ = y_min;
       y_max_ = y_max;
-      plot(exp, line_);
+      plot(exp, &line_);
     } else {
       gui_.textArea(L"exp").style.color = Palette::Red;
     }
@@ -64,8 +64,8 @@ void plot2d::execute() {
   line_.draw(4, color_);
 }
 
-void plot2d::plot(const ParsedExpression& f, LineString& line) {
-  line.clear();
+void plot2d::plot(const ParsedExpression& f, LineString* line) {
+  (*line).clear();
   const double coef_x = std::abs(x_max_all_) > std::abs(x_min_all_)
                             ? (Window::Width() / 2.0) / std::abs(x_max_all_)
                             : (Window::Width() / 2.0) / std::abs(x_min_all_);
@@ -80,7 +80,7 @@ void plot2d::plot(const ParsedExpression& f, LineString& line) {
       tmp_y = y_max_;
     const double x = coef_x * tmp_x + Window::Width() / 2.0;
     const double y = Window::Height() / 2.0 - coef_y * tmp_y;
-    line.push_back(Vec2{x, y});
+    (*line).push_back(Vec2{x, y});
   }
 }
 
