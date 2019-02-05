@@ -5,7 +5,7 @@
 class plot2d {
  public:
   // constructor
-  plot2d(GUI& g, const Color color);
+  plot2d(GUI* g, const Color color);
   // main func
   void execute();
   // getter

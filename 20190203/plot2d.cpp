@@ -7,8 +7,8 @@ double plot2d::x_max_all_;
 double plot2d::y_min_all_;
 double plot2d::y_max_all_;
 
-plot2d::plot2d(GUI& g, const Color color)
-    : gui_(g),
+plot2d::plot2d(GUI* g, const Color color)
+    : gui_(*g),
       color_(color),
       defaultExpression(L"sin(x)"),
       default_x_min(L"-7.0"),

@@ -21,7 +21,7 @@ void Main() {
     gui.push_back(std::make_shared<GUI>(GUIStyle::Default));
     (*(gui.end() - 1))->setPos(0, 150 * (gui.size() - 1));
     (*(gui.end() - 1))->style.borderColor = color;
-    plot.push_back(std::make_shared<plot2d>(**(gui.end() - 1), color));
+    plot.push_back(std::make_shared<plot2d>(&**(gui.end() - 1), color));
   };
   for (int i = 0; i < 3; i++) add_graph();
 
